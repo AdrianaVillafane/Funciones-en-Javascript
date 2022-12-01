@@ -156,11 +156,6 @@ esConsonante(unaLetra);
 
 
 
-
-
-
-
-
 // 10-   Crear una función esHoraValida que tome como argumento un string hora con el formato HH:mmy determine si es una hora válida del día o no
 
 let hora = prompt('Ingrese una hora, con dos digitos');
@@ -231,34 +226,41 @@ esParOImpar(numero)
 
 esPositivoONegativo(numero)
  // 14-     Crear una función esPositivoONegativoque acepte como argumento un numeroy devuelva el string positivosi el numeroes positivo, o el string negativosi el numeroes negativo
+ let num = prompt('Dime un numero');
 
-
-
-
-
-
- 
-esPositivoONegativo(3)  // 'positivo'
-esPositivoONegativo(-5) // 'negativo'
-avanzarSemaforo(colorActual)
-      Crear una función avanzarSemaforoque acepte como argumento un string colorActualy devuelva un string con el siguiente color del semáforo, siguiendo el orden: verde -> amarillo -> rojo -> verde
-
-avanzarSemaforo('verde')     // 'amarillo'
-avanzarSemaforo('amarillo')  // 'rojo'
-avanzarSemaforo('rojo')      // 'verde'
-obtenerDiasMes(mes)
-      Crear una función obtenerDiasMesque tome como argumento un string mesy devuelva un número dependiendo de la cantidad de días que tenga ese mes
-
-obtenerDiasMes("diciembre") // 31
-obtenerDiasMes("febrero")   // 29
+ const esParOImpar = function (num) {
+         if ((num % 2) == 0) {
+                 console.log(`Par`);
+         } else if ((num % 2) == 1) {
+                 console.log(`Impar`);
+         }
+ }
+ esParOImpar(num);
+  
 obtenerGeneracion(anioNacimiento)
-      Crear una función obtenerGeneracionque tome como argumento un número anioNacimientoy devuelva un string con la generación a la que pertenece, siga estas reglas:
+ // 15-     Crear una función obtenerGeneracionque tome como argumento un número anioNacimientoy devuelva un string con la generación a la que pertenece, siga estas reglas:
       
-      Generación	años de nacimiento
+ let anioNacimiento = Number(prompt('En que año nacio usted?'));
+
+ const obtenerGeneracion = function (anioNacimiento) {
+        if (anioNacimiento >= 1949 && anioNacimiento <= 1968) {
+                console.log(`Eres de la generación Baby Boomer`)
+        } else if ( anioNacimiento >= 1969 && anioNacimiento <= 1980) {
+                console.log(`Eres de la  Generación X`)
+        } else if ( anioNacimiento >= 1981 && anioNacimiento <= 1993) {
+                console.log( `Eres de la generación Millenials`)
+        } else (anioNacimiento >= 1994 && anioNacimiento <= 2010) {
+                console.log(`Eres de la Generacion Z`)
+        }
+ }
+ obtenerGeneracion(anioNacimiento);
+
+ /*     Generación	años de nacimiento
       Baby Boomer	1949 - 1968
       Generación X	1969 - 1980
       Millennials	1981 - 1993
       Generación Z	1994 - 2010
+      
 obtenerSensacion(temperatura)
       Crear una función obtenerSensacionque tome como argumento un número temperaturay devuelva un string dependiendo de la temperatura, con las siguientes reglas:
       
