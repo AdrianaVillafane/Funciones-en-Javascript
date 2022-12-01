@@ -226,7 +226,7 @@ esParOImpar(numero)
 
 esPositivoONegativo(numero)
  // 14-     Crear una función esPositivoONegativoque acepte como argumento un numeroy devuelva el string positivosi el numeroes positivo, o el string negativosi el numeroes negativo
- let num = prompt('Dime un numero');
+ /*let num = prompt('Dime un numero');
 
  const esParOImpar = function (num) {
          if ((num % 2) == 0) {
@@ -236,10 +236,16 @@ esPositivoONegativo(numero)
          }
  }
  esParOImpar(num);
+ */
   
-obtenerGeneracion(anioNacimiento)
+//obtenerGeneracion(anioNacimiento)
  // 15-     Crear una función obtenerGeneracionque tome como argumento un número anioNacimientoy devuelva un string con la generación a la que pertenece, siga estas reglas:
-      
+      /*     Generación	años de nacimiento
+      Baby Boomer	1949 - 1968
+      Generación X	1969 - 1980
+      Millennials	1981 - 1993
+      Generación Z	1994 - 2010
+      */
  let anioNacimiento = Number(prompt('En que año nacio usted?'));
 
  const obtenerGeneracion = function (anioNacimiento) {
@@ -255,39 +261,95 @@ obtenerGeneracion(anioNacimiento)
  }
  obtenerGeneracion(anioNacimiento);
 
- /*     Generación	años de nacimiento
-      Baby Boomer	1949 - 1968
-      Generación X	1969 - 1980
-      Millennials	1981 - 1993
-      Generación Z	1994 - 2010
+ 
       
-obtenerSensacion(temperatura)
-      Crear una función obtenerSensacionque tome como argumento un número temperaturay devuelva un string dependiendo de la temperatura, con las siguientes reglas:
-      
-      Temperatura	mensaje
-      Menor a 0°	¡Está helando!
-      mayor o igual a 0° y menor a 15°	¡Hace frío!
-      mayor o igual a 15° y menor a 25°	esta lindo
-      Mayor o igual a entre 25° y menor a 30°	hace calor
-      Mayor o igual de 30°	¡Hace mucho calor!
-obtenerSensacion(33) // "¡Hace mucho calor!"
-obtenerNota(puntaje)
-      Crear una función obtenerNotaque tome como argumento un número puntajey devuelva un string dependiendo del puntajeredondeado, con las siguientes reglas:
-      
-      Puntaje	No un
-      Menor a 6	desaprobado
-      mayor o igual a 6 y menor a 7	Regular
-      mayor o igual a 7 y menor a 8	Bueno
-      mayor o igual a entre 8 y menor a 10	muy bueno
-10	Excelente
-      menor a 0 o mayor a 10	Puntaje inválido
-obtenerNota(7)    // "Bueno"
-obtenerNota(9.6)  // "Excelente"
-obtenerNota(12)   // "Puntaje inválido"
-jugarPiedraPapelTijera(a, b)
-      Crear una función jugarPiedraPapelTijeraque tome como argumentos dos cadenas ay bque representen una jugada(piedra, papel, tijera) y dependiendo el devuelva una cadena con un mensaje avisando qué jugada ganó(o si hubo empate)
+ //obtenerSensacion(temperatura)
+ // 16-     Crear una función obtenerSensacionque tome como argumento un número temperaturay devuelva un string dependiendo de la temperatura, con las siguientes reglas:
+ /*Temperatura	mensaje
+ Menor a 0°	¡Está helando!
+ mayor o igual a 0° y menor a 15°	¡Hace frío!
+ mayor o igual a 15° y menor a 25°	esta lindo
+ Mayor o igual a entre 25° y menor a 30°	hace calor
+ Mayor o igual de 30°	¡Hace mucho calor! */
 
-jugarPiedraPapelTijera('tijera', 'piedra')  // ¡Ganó piedra!
+ let temperatura = Number(prompt('Indique la temperatura'));
+
+ const obtenerSensacion = function (temperatura) {
+         if ( temperatura < 0 ) {
+                 console.log(`¡Está helando!`)
+         } else if (temperatura >= 0 && temperatura < 15) {
+                 console.log(`¡Hace frío!`)
+         } else if (temperatura >= 15 && temperatura < 25) {
+                 console.log(`Está lindo`)
+         } else if (temperatura >= 25 && temperatura <= 30) {
+                 console.log(`Hace calor`)
+         } else if ( temperatura >= 30) {
+                 console.log(`¡Hace mucho calor!`)
+         }
+ }
+ obtenerSensacion(temperatura);
+
+    
+
+//obtenerNota(puntaje)
+ // 17-     Crear una función obtenerNota que tome como argumento un número puntajey devuelva un string dependiendo del puntajeredondeado, con las siguientes reglas:
+/* Puntaje	No un
+ Menor a 6	desaprobado
+ mayor o igual a 6 y menor a 7	Regular
+ mayor o igual a 7 y menor a 8	Bueno
+ mayor o igual a entre 8 y menor a 10	muy bueno
+10	Excelente
+ menor a 0 o mayor a 10	Puntaje inválido */
+
+ let puntaje = Number(prompt('Indique su puntaje'));
+ 
+ const obtenerNota = function (puntaje) {
+        if (puntaje < 6) {
+                console.log(`Desaprobado`)
+        } else if ( puntaje >= 6 && puntaje < 7) {
+                console.log(`Regular`)
+        } else if (puntaje >= 7 && puntaje < 8) {
+                console.log(`Bueno`) 
+        } else if (puntaje >= 8 && puntaje < 10) {
+                console.log(`Muy bueno`)
+        } else if (puntaje = 10) {
+                console.log(`Excelente!`)
+        } else if (puntaje < 0 || puntaje > 10) {
+                console.log(`Puntaje Inválido`)
+        }
+ }
+ obtenerNota(puntaje);
+   
+
+jugarPiedraPapelTijera(a, b)
+ // 18-     Crear una función jugarPiedraPapelTijeraque tome como argumentos dos cadenas ay bque representen una jugada(piedra, papel, tijera) y dependiendo el devuelva una cadena con un mensaje avisando qué jugada ganó(o si hubo empate)
+let a = prompt('Elija: Piedra, Papel ó Tijera');
+let b = prompt('Elija: Piedra, Papel ó Tijera');
+
+const jugarPiedraPapelTijera = function(a,b) {
+        if ( a === 'tijera' && b === 'piedra') {
+                console.log(`¡Ganó Piedra!`) 
+        } else if ( a === 'piedra' && b === 'tijera') {
+                console.log(`¡Ganó Piedra!`)
+        } else if ( a === 'papel' && b === 'piedra') {
+                console.log(`¡Ganó Papel!`)
+        } else if ( a === 'piedra' && b === 'papel') {
+                console.log( `¡Ganó Papel!`)
+        } else if ( a === 'papel' && b === 'tijera') {
+                console.log( `¡Ganó Tijera!`)
+        } else if ( a === 'tijera' && b === 'papel') {
+                console.log(`¡Ganó Tijera!`)
+        } else if ( a === 'piedra' && b === 'piedra') {
+                console.log(`¡Empate!`)
+        } else if ( a === 'papel' && b === 'papel') {
+                console.log( `¡Empate!`)
+        } else if ( a === 'tijera' && b === 'tijera') {
+                console.log(`¡Empate!`)
+        }
+}
+jugarPiedraPapelTijera(a,b);
+
+/*jugarPiedraPapelTijera('tijera', 'piedra')  // ¡Ganó piedra!
 jugarPiedraPapelTijera('piedra', 'tijera')  // ¡Ganó piedra!
 jugarPiedraPapelTijera('papel', 'piedra')   // ¡Ganó papel!
 jugarPiedraPapelTijera('piedra', 'papel')   // ¡Ganó papel!
