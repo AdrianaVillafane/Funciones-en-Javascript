@@ -255,11 +255,11 @@ esPositivoONegativo(numero)
                 console.log(`Eres de la  Generación X`)
         } else if ( anioNacimiento >= 1981 && anioNacimiento <= 1993) {
                 console.log( `Eres de la generación Millenials`)
-        } else (anioNacimiento >= 1994 && anioNacimiento <= 2010) {
+        } else (anioNacimiento >= 1994 && anioNacimiento <= 2010); {
                 console.log(`Eres de la Generacion Z`)
         }
  }
- obtenerGeneracion(anioNacimiento);
+ obtenerGeneracion(15-anioNacimiento);
 
  
       
